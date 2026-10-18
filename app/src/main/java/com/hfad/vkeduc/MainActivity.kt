@@ -11,6 +11,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.hfad.vkeduc.presentation.appdetails.AppDetails
+import com.hfad.vkeduc.presentation.appdetails.AppDetailsContent
+import com.hfad.vkeduc.presentation.appdetails.Category
 import com.hfad.vkeduc.ui.theme.VKEducTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,29 +22,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             VKEducTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                AppNavHost(modifier = Modifier.fillMaxSize())
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    VKEducTheme {
-        Greeting("Android")
     }
 }
